@@ -18,11 +18,10 @@ static void setup_inferior(const char *path, char *const argv[]) {
 static void attach_to_inferior(pid_t pid) {
   while(1) {
     int status;
-    printf("%d\n", pid);
     waitpid(pid, &status, 0);
 
     if(WIFSTOPPED(status) && WSTOPSIG(status) == SIGTRAP) {
-      printf("Inferior stopedon SIGTRAP - continuing...\n");
+      printf("Inferior stoped on SIGTRAP - continuing...\n");
       ptrace(PT_CONTINUE, pid, ignored_ptr, no_continue_signal);
     } else if(WIFEXITED(status)) {
       printf("Inferior exited - debugger terminating...");
@@ -36,7 +35,6 @@ void dbg_inferior_exec(const char *path, char *const argv[]) {
 
   do {
     result = fork();
-    printf("result %d\n", result);
     switch (result)
     {
     case 0: // inferior

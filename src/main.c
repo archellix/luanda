@@ -3,5 +3,5 @@
 
 int main() {
   char *argv[1] = { 0 };
-  dbg_inferior_exec("./a.out", argv);
+  dbg_inferior_exec("bin/test", argv);
 }
