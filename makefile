@@ -5,9 +5,9 @@ CFLAGS=-c -Wall
 LDFLAGS=
 SRC_FOLDER=src
 BIN_FOLDER=bin
-SOURCES=${SRC_FOLDER}/main.c ${SRC_FOLDER}/luandra-debugger.c
+SOURCES=${SRC_FOLDER}/main.c ${SRC_FOLDER}/luanda-debugger.c
 OBJECTS=$(SOURCES:.c=.o)
-EXECUTABLE=${BIN_FOLDER}/luandra-dbg
+EXECUTABLE=${BIN_FOLDER}/luanda-dbg
 
 all: $(SOURCES) $(EXECUTABLE)
 

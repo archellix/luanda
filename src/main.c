@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "luandra-debugger.h"
+#include "luanda-debugger.h"
 
 int main() {
   char *argv[1] = { 0 };
