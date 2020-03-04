@@ -6,16 +6,15 @@
 #include <sys/ptrace.h>
 #include <sys/wait.h>
 
-
 static const pid_t ignored_pid;
 static const caddr_t ignored_ptr;
 static const int no_continue_signal = 0;
 
 static void setup_inferior(const char *path, char *const argv[]) {
-  printf(" ptrace(%i, %i, %i, %i), returning -1\n", PT_TRACE_ME, NULL, NULL, 0);
-  printf("setup_inferior");
   ptrace(PT_TRACE_ME, ignored_pid, ignored_ptr, 0);
-  execv(path, argv);
+  if (execv(path, argv) < 0) {
+    perror("execv error");
+  }
 }
 
 static void attach_to_inferior(pid_t pid) {
@@ -25,7 +24,7 @@ static void attach_to_inferior(pid_t pid) {
 
     if(WIFSTOPPED(status) && WSTOPSIG(status) == SIGTRAP) {
       printf("Inferior stoped on SIGTRAP - continuing...\n");
-      ptrace(PT_CONTINUE, pid, ignored_ptr, no_continue_signal);
+      ptrace(PT_CONTINUE, pid, 1, 0);
     } else if(WIFEXITED(status)) {
       printf("Inferior exited - debugger terminating...\n");
       exit(0);
