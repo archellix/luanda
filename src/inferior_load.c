@@ -27,7 +27,7 @@ static void attach_to_inferior(pid_t pid) {
       ptrace(PT_CONTINUE, pid, 1, 0);
     } else if(WIFEXITED(status)) {
       printf("Inferior exited - debugger terminating...\n");
-      exit(0);
+      return;
     }
   }
 }

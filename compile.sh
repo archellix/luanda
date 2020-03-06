@@ -1,7 +1,7 @@
 #!/bin/sh
 
 OUTDIR=_out
-DEFAULT_TARGET=build
+DEFAULT_TARGET=default
 BASEDIR=$(dirname $0)
 
 function main {
@@ -21,8 +21,17 @@ function build {
   make
 }
 
+function tests {
+  cd $OUTDIR
+  ctest --output-on-failure
+}
+
 function clean {
   rm -rf $OUTDIR
+}
+
+function default {
+  build && tests
 }
 
 cd $BASEDIR
