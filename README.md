@@ -1,3 +1,5 @@
+[](https://travis-ci.com/budn1k0ver/luanda-dbg.svg?branch=master)
+
 # Luanda
 
 _Luanda - debugger for the Lua programming language_
