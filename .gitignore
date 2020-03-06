@@ -1,4 +1,5 @@
 *.o
 *.out
+_out
 bin
 .DS_Store

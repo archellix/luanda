@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "luanda-debugger.h"
+#include "inferior_load.h"
 
 int main() {
   char *argv[1] = { 0 };
