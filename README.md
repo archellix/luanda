@@ -6,7 +6,7 @@ _Luanda - debugger for the Lua programming language_
 
 * <del> Create a minimal dubbuger in C, that can load and attach an inferior and run it to completion
 * Build the infrastructure for the dubbuger project including
-  * Build scripts
+  * <del> Build scripts
   * Test framework
   * Continuous integration
 * Inplement breakpoint at a fixed address and add callback to the system in C
