@@ -1,4 +1,5 @@
 language: c
+sudo: false
 
 env:
   global:
@@ -21,9 +22,9 @@ before_install:
   - mkdir -p "$HOME"/Deps "$HOME"/Dowloads
 install:
   - echo "-- Installing CMake"
-  - hdiutil attach cmake-3.17.0-rc2-Darwin-x86_64.dmg
-  - cp -Rf /Volumes/cmake-3.17.0-rc2-Darwin-x86_64/CMake.app /Applications/
-  - hdiutil detach /Volumes/cmake-3.8.1-Darwin-x86_64
+  - curl https://cmake.org/files/v3.17/cmake-3.17.0-rc2-Darwin-x86_64.tar.gz -O
+  - tar -xzf cmake-3.17.0-rc2-Darwin-x86_64.tar.gz
+  - mv cmake-3.17.0-rc2-Darwin-x86_64/CMake.app /Applications
   - /Applications/CMake.app/Contents/bin/cmake-gui --install
   - echo "-- Done installing CMake"
 script:
