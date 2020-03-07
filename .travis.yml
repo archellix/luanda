@@ -1,5 +1,4 @@
 language: c
-sudo: false
 
 env:
   global:
@@ -7,7 +6,7 @@ env:
     - CFLAGS="-c -Wall"
     # Misc
     - RUN_TESTS=true
-matrix:
+jobs:
   include:
     - os: osx
       osx_image: xcode11.3
@@ -18,9 +17,7 @@ matrix:
           packages:
             - cmake
           update: true
-before_install:
-  - mkdir -p "$HOME"/Deps "$HOME"/Dowloads
 script:
-  - bash ./compiler.sh
+  - bash ./compile.sh
 
 
