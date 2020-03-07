@@ -18,6 +18,6 @@ jobs:
             - cmake
           update: true
 script:
-  - bash ./compiler.sh
+  - bash ./compile.sh
 
 
