@@ -12,12 +12,14 @@ jobs:
       osx_image: xcode11.3
       compiler: gcc
       language: shell
-      addons:
-        homebrew:
-          packages:
-            - cmake
-          update: true
+install:
+  - echo "-- Installing CMake"
+  - curl https://cmake.org/files/v3.17/cmake-3.17.0-rc2-Darwin-x86_64.tar.gz -O
+  - tar -xzf cmake-3.17.0-rc2-Darwin-x86_64.tar.gz
+  - mv cmake-3.17.0-rc2-Darwin-x86_64/CMake.app /Applications
+  - /Applications/CMake.app/Contents/bin/cmake-gui --install
+  - echo "-- Done installing CMake"
 script:
-  - bash ./compile.sh
+  - bash ./compiler.sh
 
 
