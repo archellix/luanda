@@ -24,6 +24,9 @@ function build {
 function tests {
   cd $OUTDIR
   ctest --output-on-failure
+  ls test
+  ls _out
+  ls _out/test
 }
 
 function clean {

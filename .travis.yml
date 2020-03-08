@@ -20,3 +20,5 @@ jobs:
 script:
   - bash ./compile.sh
   - ls test
+  - ls _out
+  - ls _out/test
