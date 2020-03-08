@@ -25,10 +25,6 @@ function build {
 function tests {
   cd $OUTDIR
   ctest --output-on-failure
-  ls ..
-  ls
-  ls test
-  ls test/inferiors
 }
 
 function clean {

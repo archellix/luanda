@@ -19,6 +19,3 @@ jobs:
           update: true
 script:
   - bash ./compile.sh
-  - ls test
-  - ls _out
-  - ls _out/test
