@@ -20,18 +20,13 @@ function build {
   cd $OUTDIR
   cmake ..
   make
-  ls src
-  ls test
   echo "----  Complete Build Luanda"
 }
 
 function tests {
   echo "----  Run Test Luanda"
-  ls
   cd $OUTDIR
   ctest --output-on-failure
-  ls Testing/Temporary/
-  cat Testing/Temporary/LastTest.log
   echo "----  Complete Test Luanda"
 }
 

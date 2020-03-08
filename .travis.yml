@@ -1,21 +1,24 @@
 language: c
+os: osx
+osx_image: xcode11.3
+compiler:
+  - clang 
+  - gcc
+language: shell
+addons:
+  homebrew:
+    packages:
+      - cmake
+    update: true
+before_install:
+  - test -n $CC  && unset CC
+  - test -n $CXX && unset CXX
+script:
+  - bash ./compile.sh
 
 env:
   global:
     # C flags
-    - CFLAGS="-c -Wall"
+    # - CFLAGS="-c -Wall"
     # Misc
     - RUN_TESTS=true
-jobs:
-  include:
-    - os: osx
-      osx_image: xcode11.3
-      compiler: gcc
-      language: shell
-      addons:
-        homebrew:
-          packages:
-            - cmake
-          update: true
-script:
-  - bash ./compile.sh
