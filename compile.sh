@@ -19,14 +19,16 @@ function build {
   cd $OUTDIR
   cmake ..
   make
+  ls
 }
 
 function tests {
   cd $OUTDIR
   ctest --output-on-failure
+  ls ..
+  ls
   ls test
-  ls _out
-  ls _out/test
+  ls test/inferiors
 }
 
 function clean {
