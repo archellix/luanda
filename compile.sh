@@ -15,16 +15,22 @@ function main {
 }
 
 function build {
+  echo "----  Run Build Luanda"
   mkdir -p $OUTDIR
   cd $OUTDIR
   cmake ..
   make
-  ls
+  ls src
+  ls test
+  echo "----  Complete Build Luanda"
 }
 
 function tests {
+  echo "----  Run Test Luanda"
+  ls
   cd $OUTDIR
   ctest --output-on-failure
+  echo "----  Complete Test Luanda"
 }
 
 function clean {
