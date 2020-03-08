@@ -30,6 +30,8 @@ function tests {
   ls
   cd $OUTDIR
   ctest --output-on-failure
+  ls Testing/Temporary/
+  cat Testing/Temporary/LastTest.log
   echo "----  Complete Test Luanda"
 }
 
