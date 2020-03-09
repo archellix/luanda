@@ -30,6 +30,13 @@ function tests {
   echo "----  Complete Test Luanda"
 }
 
+function docs {
+  echo "----  Run Document generation"
+  cd $BASEDIR
+  doxygen doxyfile
+  echo "----  Complete Document generation"
+}
+
 function clean {
   rm -rf $OUTDIR
 }

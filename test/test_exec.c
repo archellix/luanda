@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include <luanda-dbg.h>
+#include <luanda.h>
 
 int capturefd(int fd) {
   char name[] = "test_exec_XXXXXX";
