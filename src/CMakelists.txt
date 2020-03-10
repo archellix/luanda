@@ -1,2 +1,2 @@
 include_directories(. ../include)
-add_library(luanda-dbg inferior_load.c)
+add_library(luanda inferior_load.c)

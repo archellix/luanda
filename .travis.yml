@@ -21,3 +21,8 @@ env:
     # - CFLAGS="-c -Wall"
     # Misc
     - RUN_TESTS=true
+
+
+# todo install doxygen 
+# MacOs - brew install doxygen
+# Linux - apt-get install doxygen

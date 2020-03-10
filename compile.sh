@@ -1,6 +1,7 @@
 #!/bin/sh
 
 OUTDIR=_out
+DOCSDIR=docs
 DEFAULT_TARGET=default
 BASEDIR=$(dirname $0)
 
@@ -30,12 +31,25 @@ function tests {
   echo "----  Complete Test Luanda"
 }
 
+function docs {
+  echo "----  Run Document generation"
+  cd $BASEDIR
+  doxygen doxyfile
+  echo "----  Complete Document generation"
+}
+
 function clean {
   rm -rf $OUTDIR
 }
 
 function default {
   build && tests
+}
+
+function publish {
+  docs
+  mkdir -p $DOCSDIR
+  cp -R $OUTDIR/docs/html/* $DOCSDIR
 }
 
 cd $BASEDIR

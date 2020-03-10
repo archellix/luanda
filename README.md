@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/budn1k0ver/luanda-dbg.svg?branch=master)](https://travis-ci.com/budn1k0ver/luanda-dbg)
+[![Build Status](https://travis-ci.com/budn1k0ver/luanda.svg?branch=master)](https://travis-ci.com/budn1k0ver/luanda)
 
 # Luanda
 
