@@ -32,7 +32,7 @@ static void attach_to_inferior(pid_t pid) {
   }
 }
 
-void dbg_inferior_exec(const char *path, char *const argv[]) {
+luanda_inferior_t luanda_inferior_exec(const char *path, char *const argv[]) {
   pid_t result;
   
   do {
@@ -50,4 +50,5 @@ void dbg_inferior_exec(const char *path, char *const argv[]) {
       break;
     }
   } while(result == -1 && errno == EAGAIN);
+  return result;
 }

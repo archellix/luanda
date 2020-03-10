@@ -35,7 +35,8 @@ int main() {
 
   int captured = capturefd(STDOUT_FILENO);
 
-  dbg_inferior_exec("./inferiors/hello", argv);
+  luanda_inferior_t inferior = luanda_inferior_exec("./inferiors/hello", argv);
+  luanda_inferior_continue(inferior);
 
   verify_text(captured, "Hi my majesty!\n");
 }
