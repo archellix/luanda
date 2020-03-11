@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/budn1k0ver/luanda.svg?branch=master)](https://travis-ci.com/budn1k0ver/luanda)
+[![Build Status](https://travis-ci.com/budn1k0ver/luanda.svg?branch=master)](https://travis-ci.com/budn1k0ver/luanda) [![Join the chat at https://gitter.im/budn1k0ver-luanda/community](https://badges.gitter.im/budn1k0ver-luanda/community.svg)](https://gitter.im/budn1k0ver-luanda/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 # Luanda
 
 _Luanda - debugger for the Lua programming language_
