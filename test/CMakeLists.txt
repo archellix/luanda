@@ -2,9 +2,7 @@ enable_testing()
 set(LIBS luanda)
 include_directories(. ../include)
 
-set(TESTS test_exec
-          test_breakpoint
-          )
+set(TESTS test_exec test_breakpoint)
 
 foreach(TEST ${TESTS})
   add_executable(${TEST} ${TEST}.c)

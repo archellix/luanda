@@ -1,7 +1,6 @@
 #include <luanda.h>
 #include <unistd.h>
 #include <sys/ptrace.h>
-#include <mach/exception_types.h>
 
 static luanda_breakpoint_callback_t g_callback;
 
@@ -14,5 +13,7 @@ luanda_breakpoint_t luanda_inferior_set_breakpoint(luanda_inferior_t inferior, c
   const void *int3_opcode = (void *) 0xCC;
   pid_t inferior_pid = inferior;
 
-  ptrace(PT_ATTACHEXC, inferior_pid, int3_opcode, target_address);
+  ptrace(PTRACE_POKETEXT, inferior_pid, int3_opcode, target_address);
+
+  return 0;
 }
